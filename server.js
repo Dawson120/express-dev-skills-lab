@@ -24,9 +24,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use(function(req, res, next) {
   console.log('Hello SEI!')
   req.time = new Date().toLocaleTimeString()
-  req.myName = 'Ben'
+  req.myName = 'Dawson'
   next()
 })
+
 app.use(
   express.static(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
@@ -41,6 +42,12 @@ app.use('/skills', skillsRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))
+})
+
+app.use(function(req, res, next) {
+  console.log('Hello SEI!')
+  req.time = new Date().toLocaleTimeString()
+  next()
 })
 
 // error handler
