@@ -45,9 +45,10 @@ function show(req, res) {
 }
 
 function deleteSkill(req, res) {
-  Skill.findByIdAndDelete(req.params.todoId)
+  Skill.findByIdAndDelete(req.params.skillId)
   .then(skill => {
     res.redirect('/skills')
+    console.log("im trying boss")
   })
   .catch(error => {
     console.log(error)
